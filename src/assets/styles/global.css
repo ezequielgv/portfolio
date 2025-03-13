@@ -1,0 +1,293 @@
+/* Variables globales */
+:root {
+    --color-vue: #41b883;
+    --color-laravel: #ff2d20;
+    --color-git: #f37c23;
+    --shadow-default: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition-default: all 0.3s ease;
+}
+  
+/* Estilos base */
+.container {
+    height: 100vh;
+    background-color: ghostwhite;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.container::-webkit-scrollbar {  display: none;  } /* Chrome/Safari/Opera */
+  
+/* Secciones */
+.section {
+    height: 100vh;
+    position: relative;
+    padding: 5rem 10%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+  
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section:not(.active) { transform: translateY(20px); }
+  
+/* Navegación */
+.top-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-default);
+    transition: var(--transition-default);
+}
+  
+.top-menu.scrolled {
+    padding: 8px 0 !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+}
+  
+.menu-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+  
+.menu-links a {
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    padding: 5px 10px;
+    transition: var(--transition-default);
+}
+  
+.menu-links a:hover { opacity: 0.8; }
+  
+.top-menu.scrolled .menu-links a {
+    font-size: 0.9rem !important;
+    padding: 3px 8px !important;
+}
+  
+  /* Línea de progreso */
+.progress-line {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, height 0.3s ease;
+}
+  
+/* Sección Inicio */
+.image-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+  
+.image-placeholder {
+    height: 400px;
+    width: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: -5px 10px 15px -5px rgba(0, 0, 0, 0.75);
+}
+  
+.image-me {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    align-self: right !important;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.image-me:hover { transform: scale(1.01); }
+.hero-content { margin-left: -120px; }
+
+.name-title { 
+    padding-top: 20px;
+    transition: var(--transition-default); 
+}
+
+/* Sección Habilidades */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+  
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-category-card { transition: transform 0.3s ease; }
+.skill-category-card:hover { transform: translateY(-5px); }
+
+.skill-detail-card {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: var(--transition-default);
+}
+  
+.skill-detail-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+  
+.category-title {
+    margin: 0 0 0 8px;
+    display: inline-flex;
+    align-items: center;
+}
+  
+/* Componentes específicos */
+.n-card-header .n-space {
+    display: flex;
+    width: 100%;
+}
+    
+.n-card-header .n-flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+  
+/* Menú hamburguesa para móvil */
+.hamburger-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+    padding: 8px;
+}
+  
+.hamburger-btn rect {
+    fill: var(--color-vue);
+    transition: var(--transition-default);
+}
+  
+.hamburger-btn:hover rect { fill: #317a5d; }
+  
+/* Responsive */
+@media (max-width: 768px) {
+    /* Menú móvil */
+    .menu-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 80px 20px;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .menu-links.active { right: 0; }
+  
+    .top-menu {
+        height: 20px; /* Altura fija para el navbar */
+        display: flex;
+        align-items: center;
+    }
+
+    .top-menu.scrolled .menu-links a { font-size: 1rem !important; }
+    
+    /* Ajustes para el contenedor */
+    .section {
+        padding: 5rem 5% !important;
+        height: auto;
+        min-height: 100vh;
+    }
+  
+    /* Ajustes para la sección de inicio */
+
+    .hero-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .image-placeholder {
+        width: 120px !important;
+        height: 120px !important;
+        margin: 0 auto;
+    }
+    
+    .image-me.mobile-image img { 
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 10% !important; 
+    }      
+
+    .bio-text { text-align: center !important; }
+
+    .name-title {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+      
+    .title-group {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .NGrid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: 0.5rem;
+    }
+
+    .n-gi {
+        display: flex;
+        justify-content: center;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+  
+    .n-gi:first-child {
+        grid-row: 1 / 3;
+        grid-column: 1;
+        align-self: start;
+    }
+
+    .title-group {
+        grid-row: 1 / 3;
+        grid-column: 2;
+        align-self: center;
+    }
+
+    .mobile-bio {
+        grid-row: 3 / 5;
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+    }
+}
+  
+@media (max-width: 480px) { .name-title { font-size: 2rem !important; } }
