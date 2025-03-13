@@ -173,7 +173,7 @@
 
 	// Función para detectar dispositivos móviles
 	const isMobileDevice = () => {
-		if (window.innerWidth <= 768) {
+		if (window.innerWidth <= 575) {
 			// Verificar userAgent para mayor precisión
 			return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 		}
