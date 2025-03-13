@@ -42,6 +42,14 @@
 									junto con metodologías ágiles, para entregar productos de alta calidad. Mi sólida formación técnica y logros,
 									entre ellos ser campeón nacional en olimpíadas de programación, respaldan mi firme compromiso con la excelencia.
 								</n-p>
+								<div>
+									<n-a href='https://x.com/ezequielgv6' target="_blank" style="padding-right: 15px;">
+										<font-awesome-icon :icon="['fab', 'x-twitter']" size="2x" /> 
+									</n-a>
+									<n-a href='https://www.instagram.com/ezegv6/' target="_blank">
+										<font-awesome-icon :icon="['fab', 'instagram']" size="2x"/>
+									</n-a>
+								</div>
 							</n-space>
 						</div>
 					</div>
@@ -127,10 +135,11 @@
 	import { ref, computed, onMounted, onBeforeUnmount, markRaw } from 'vue';
 	import { 
 		NH1, NH2, NH3, NIcon, NCard, NSpace, NTag, NTimeline, 
-		NTimelineItem, NP, NGrid, NGi, NFlex, NImage, NScrollbar
+		NTimelineItem, NP, NGrid, NGi, NFlex, NImage, NScrollbar, NA
 	} from 'naive-ui';
 
 	import ContactButton from '../components/FloatButton.vue';
+	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 	import { Briefcase as BriefcaseIcon } from '@vicons/tabler';
 	import { Code as CodeIcon } from '@vicons/carbon';
 
