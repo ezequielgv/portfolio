@@ -19,11 +19,11 @@
 
 		<!-- Sección 1: Inicio -->
 		<section class="section" id="inicio" :class="{ active: activeSection === 0 }">
-			<NGrid :cols="isMobile ? 1 : 2" x-gap="12" responsive="screen">
+			<NGrid :cols="isMobile ? 1 : 2" x-gap="50" class="ngrid-sec-1" responsive="screen">
 				<n-gi :span="isMobile ? 1 : 1">
 					<n-flex justify="center" class="image-wrapper">
 						<div class="image-placeholder" :class="{ 'mobile-placeholder': isMobile }">
-						<n-image class="image-me" :src="meImage" :class="{ 'mobile-image': isMobile }" 
+							<n-image class="image-me" :src="meImage" :class="{ 'mobile-image': isMobile }" 
 							:img-props="{ style: 'object-fit: cover; width: 100%; height: 100%' }"/>
 						</div>
 					</n-flex>

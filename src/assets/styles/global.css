@@ -118,7 +118,7 @@
 }
 
 .image-me:hover { transform: scale(1.01); }
-.hero-content { margin-left: -120px; }
+.hero-content { margin-left: -80px; }
 
 .name-title { 
     padding-top: 20px;
@@ -221,11 +221,10 @@
         margin-top: -160px !important;
     }
 
-    /* Fix empty space in hero section */
-    /* .hero-content { margin-top: -60px;  } Reduce vertical gap */
+    .n-scrollbar { max-height: 65vh !important; } /* Adjust scrollbar containers */
 
-    /* Adjust scrollbar containers */
-    .n-scrollbar { max-height: 65vh !important; }
+    .ngrid-sec-1 { padding-top: 150px !important; }
+
 }
 
 @media (max-width: 575px) {
