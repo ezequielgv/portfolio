@@ -204,30 +204,30 @@
   
 /* Responsive */
 /* Add these media queries to your global.css */
-@media (min-height: 800px) {
+@media (min-width: 992px) {
+    /* Desktop improvements */
     .section {
       padding: 2rem 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Start content from top */
+      height: auto;
+      min-height: 100vh; /* Min height instead of fixed */
     }
     
-    .skills-container, .experience-container {
-      max-width: 1200px;
-      margin: 0 auto;
+    #inicio {
+      align-items: center;
+      justify-content: center;
     }
-}
-  
-@media (min-height: 1000px) {
-    .section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    
+    /* Fix empty space in hero section */
+    .hero-content {
+      margin-top: -60px; /* Reduce vertical gap */
     }
-
-    .skills-container {
-        max-height: 70vh;
-    }
-
-    .experience-container {
-        max-height: 70vh;
+    
+    /* Adjust scrollbar containers */
+    .n-scrollbar {
+      max-height: 65vh !important;
     }
 }
 
