@@ -16,7 +16,7 @@
 		</nav>
 
 		<div class="progress-line" :style="progressStyle"></div> <!-- Línea de progreso -->
-  
+
 		<!-- Sección 1: Inicio -->
 		<section class="section" id="inicio" :class="{ active: activeSection === 0 }">
 			<NGrid :cols="isMobile ? 1 : 2" x-gap="12" responsive="screen">
@@ -48,7 +48,7 @@
 				</n-gi>
 			</NGrid>
 		</section>
-  
+
 		<!-- Sección 2: Habilidades -->
 		<section class="section" id="habilidades" :class="{ active: activeSection === 1 }">
 			<div class="section-header">
@@ -56,7 +56,7 @@
 					<n-icon :component="Code" /> Habilidades Técnicas
 				</n-h2>
 			</div>
-	
+
 			<n-scrollbar style="max-height: 75vh">
 				<div class="skills-container">
 					<n-card v-for="(category, index) in skillsData" :key="index" class="skill-category-card" hoverable>
@@ -68,7 +68,7 @@
 								</div>
 							</n-space>
 						</template>
-			
+
 						<n-grid :cols="3" x-gap="12" y-gap="12">
 							<n-gi v-for="(skill, i) in category.skills" :key="i">
 								<n-card class="skill-detail-card" hoverable size="small" :bordered="false">
@@ -88,7 +88,7 @@
 				</div>
 			</n-scrollbar>
 		</section>
-  
+
 	  <!-- Sección 3: Experiencia -->
 	  <section class="section" id="experiencia" :class="{ active: activeSection === 2 }">
 		<div class="section-header">
@@ -119,9 +119,9 @@
 		</div>
 	  </section>
 	</div>
-  
+
 	<ContactButton :active-section="activeSection"/>
-  </template>
+</template>
 	
 <script setup>
 	import { ref, computed, onMounted, onBeforeUnmount, markRaw } from 'vue';
@@ -172,7 +172,15 @@
 	};
 
 	// Función para detectar dispositivos móviles
-	const checkMobile = () => { isMobile.value = window.innerWidth <= 768; };
+	const isMobileDevice = () => {
+		if (window.innerWidth <= 768) {
+			// Verificar userAgent para mayor precisión
+			return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+		}
+		return false;
+	}
+
+	const checkMobile = () => { isMobile.value = isMobileDevice(); };
 
 	// Función para scroll suave
 	const scrollToSection = (id) => { 
@@ -209,7 +217,7 @@
 		sectionsRef.value.forEach(section => { sectionObserver.observe(section); });
 
 		// Comprobar si es móvil
-		checkMobile();
+		setTimeout(() => { checkMobile(); }, 100);
 		window.addEventListener('resize', checkMobile);
 	});
 
