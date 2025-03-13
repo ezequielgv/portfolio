@@ -192,7 +192,7 @@
 .hamburger-btn:hover rect { fill: #317a5d; }
   
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 575px) {
     /* Menú móvil */
     .menu-links {
         position: fixed;
