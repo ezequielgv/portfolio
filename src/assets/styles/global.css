@@ -207,7 +207,7 @@
 @media (min-width: 992px) {
     /* Desktop improvements */
     .section {
-        padding: 4rem 20%;
+        padding: 4rem 10%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -218,6 +218,7 @@
     #inicio {
         align-items: center;
         justify-content: center;
+        padding-bottom: 20px;
     }
 
     /* Fix empty space in hero section */
