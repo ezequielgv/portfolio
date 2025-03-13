@@ -243,13 +243,13 @@
     }
 
     .image-placeholder {
-        width: 120px !important;
+        width: 90px !important;
         height: 120px !important;
         margin: 0 auto;
     }
     
     .image-me.mobile-image img { 
-        width: 120px !important;
+        width: 90px !important;
         height: 120px !important;
         border-radius: 10% !important; 
     }      

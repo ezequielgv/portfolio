@@ -172,18 +172,7 @@
 	};
 
 	// Función para detectar dispositivos móviles
-	// const isMobileDevice = () => {
-	// 	if (window.innerWidth <= 575) {
-	// 		// Verificar userAgent para mayor precisión
-	// 		return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-	// 	}
-	// 	return false;
-	// }
-
-	const isMobileDevice = () => {
-		alert('you are in mobile');
-		return window.innerWidth <= 575;
-	}
+	const isMobileDevice = () => { return window.innerWidth <= 575; }
 
 	const checkMobile = () => { isMobile.value = isMobileDevice(); };
 
