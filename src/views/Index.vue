@@ -181,8 +181,8 @@
 	// }
 
 	const isMobileDevice = () => {
+		alert('you are in mobile');
 		return window.innerWidth <= 575;
-		console.log('you are in mobile')
 	}
 
 	const checkMobile = () => { isMobile.value = isMobileDevice(); };
