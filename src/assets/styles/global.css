@@ -125,6 +125,17 @@
     transition: var(--transition-default); 
 }
 
+.mobile-placeholder {
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 10% !important;
+}
+  
+.mobile-image {
+    width: 120px !important;
+    height: 120px !important;
+}
+
 /* Sección Habilidades */
 .skills-container {
     display: flex;

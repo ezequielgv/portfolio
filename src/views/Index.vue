@@ -22,9 +22,9 @@
 			<NGrid :cols="isMobile ? 1 : 2" x-gap="12" responsive="screen">
 				<n-gi :span="isMobile ? 1 : 1">
 					<n-flex justify="center" class="image-wrapper">
-						<div class="image-placeholder" :style="isMobile ? { width: '120px', height: '120px' } : {}">
-							<n-image class="image-me" :src="meImage" :img-props="{ style: 'object-fit: cover; width: 100%; height: 100%' }" 
-								:class="{ 'mobile-image': isMobile }"/>
+						<div class="image-placeholder" :class="{ 'mobile-placeholder': isMobile }">
+						<n-image class="image-me" :src="meImage" :class="{ 'mobile-image': isMobile }" 
+							:img-props="{ style: 'object-fit: cover; width: 100%; height: 100%' }"/>
 						</div>
 					</n-flex>
 				</n-gi>
@@ -182,6 +182,7 @@
 
 	const isMobileDevice = () => {
 		return window.innerWidth <= 575;
+		console.log('you are in mobile')
 	}
 
 	const checkMobile = () => { isMobile.value = isMobileDevice(); };
