@@ -222,7 +222,7 @@
 		sectionsRef.value.forEach(section => { sectionObserver.observe(section); });
 
 		// Comprobar si es móvil
-		setTimeout(() => { checkMobile(); }, 100);
+		checkMobile();
 		window.addEventListener('resize', checkMobile);
 	});
 
