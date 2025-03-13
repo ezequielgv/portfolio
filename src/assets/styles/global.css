@@ -207,28 +207,24 @@
 @media (min-width: 992px) {
     /* Desktop improvements */
     .section {
-      padding: 2rem 10%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; /* Start content from top */
-      height: auto;
-      min-height: 100vh; /* Min height instead of fixed */
+        padding: 5rem 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 100vh;
     }
-    
+
     #inicio {
-      align-items: center;
-      justify-content: center;
+        align-items: center;
+        justify-content: center;
     }
-    
+
     /* Fix empty space in hero section */
-    .hero-content {
-      margin-top: -60px; /* Reduce vertical gap */
-    }
-    
+    /* .hero-content { margin-top: -60px;  } Reduce vertical gap */
+
     /* Adjust scrollbar containers */
-    .n-scrollbar {
-      max-height: 65vh !important;
-    }
+    .n-scrollbar { max-height: 65vh !important; }
 }
 
 @media (max-width: 575px) {

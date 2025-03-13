@@ -5,6 +5,7 @@ export default defineConfig({
     plugins: [vue()],
     base: './', 
     server: { port: 5173, },
+    build: { outDir: 'docs', },
     resolve: {
         alias: {'@': '/src',}
     }
