@@ -203,6 +203,34 @@
 .hamburger-btn:hover rect { fill: #317a5d; }
   
 /* Responsive */
+/* Add these media queries to your global.css */
+@media (min-height: 800px) {
+    .section {
+      padding: 2rem 10%;
+    }
+    
+    .skills-container, .experience-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+}
+  
+@media (min-height: 1000px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .skills-container {
+        max-height: 70vh;
+    }
+
+    .experience-container {
+        max-height: 70vh;
+    }
+}
+
 @media (max-width: 575px) {
     /* Menú móvil */
     .menu-links {
